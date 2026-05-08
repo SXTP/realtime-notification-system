@@ -7,7 +7,7 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddHealthChecks();
 
 // Redis Connection String
-var redisConn = builder.Configuration.GetValue<string>("RedisConnection") ?? "localhost:6379";
+var redisConn = builder.Configuration.GetConnectionString("Redis");
 
 // SignalR + Redis Backplane
 builder.Services.AddSignalR()
@@ -18,7 +18,6 @@ builder.Services.AddSignalR()
 
 builder.Services.AddEndpointsApiExplorer();
 
-builder.Services.AddControllers();
 // Learn more about configuring OpenAPI at https://aka.ms/aspnet/openapi
 builder.Services.AddOpenApi();
 
@@ -45,8 +44,6 @@ else
 
 app.UseCors();
 app.UseAuthorization();
-
-app.MapControllers();
 
 // Hub Mapping
 app.MapHub<NotificationHub>("/notifications");
