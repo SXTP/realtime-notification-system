@@ -21,7 +21,7 @@ Projenin çalışması için bilgisayarınızda **Docker Desktop** yüklü olmal
 
 1. Depoyu klonlayın:
    ```bash
-   git clone https://github.com/kullaniciadiniz/realtime-notification-system.git
+   git clone https://github.com/SXTP/realtime-notification-system.git
    cd realtime-notification-system
    ```
 
